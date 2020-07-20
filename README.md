@@ -5,7 +5,7 @@ Cpython learning examples, let's speed up your Python speed 10000 times!
 CPython 学习例子，来，让你的Python，`加速1w倍`吧！
 
 - CMakeLists.txt ------ Compile the file, you should pay attention to your own Python dependency directory。cmake编译文件，你自己留意好自己的`python依赖目录`
-- example ------ Examples of C + + accelerating Python。C++ 加速Python的例子
+- example ------ Examples of C++ accelerating Python。C++ 加速Python的例子
 
 
 
