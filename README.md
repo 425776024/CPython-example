@@ -7,7 +7,7 @@ Cpython learning examples, let's speed up your Python speed 10000 times!
 
 
 
-| 路径       | 描述                                                         |
+| path       | description                                                  |
 | ---------- | ------------------------------------------------------------ |
 | example/P0 | Use GCC to compile C file as so / DLL library and load it with ctypes in Python |
 | example/P1 | Run Python code in C++, such as: ` import numpy !`           |
