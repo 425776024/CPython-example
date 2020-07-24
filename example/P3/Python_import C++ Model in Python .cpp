@@ -10,18 +10,10 @@ int add(int a, int b) {
     return a + b;
 }
 
-long range_add(int a, int b) {
-    long sum = 0;
-    for (int i = a; i < b; i++) {
-        sum += i;
-    }
-    return sum;
-}
-
-
 void printc(char *s) {
     cout << "Printc:" << s << endl;
 }
+
 
 
 static PyObject *py_add(PyObject *self, PyObject *args) {
@@ -32,18 +24,10 @@ static PyObject *py_add(PyObject *self, PyObject *args) {
 　　c.调用原生C函数
 　　d.将调用返回的C变量，转换为PyObject*或其子类（通过PyLong_FromLong）等方法，并返回
      * **/
-    int num1, num2;
+    long num1, num2;
     if (!PyArg_ParseTuple(args, "ii", &num1, &num2)) return NULL;
     return PyLong_FromLong(add(num1, num2));
 }
-
-
-static PyObject *py_range_add(PyObject *self, PyObject *args) {
-    long num1, num2;
-    if (!PyArg_ParseTuple(args, "ii", &num1, &num2)) return NULL;
-    return PyLong_FromLong(range_add(num1, num2));
-}
-
 
 static PyObject *py_printc(PyObject *self, PyObject *args) {
     char *st;
@@ -53,20 +37,19 @@ static PyObject *py_printc(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef Methods[] = {
-        {"add",       py_add,       METH_VARARGS},
-        {"printc",    py_printc,    METH_VARARGS},
-        {"range_add", py_range_add, METH_VARARGS},
+        {"add",    py_add,    METH_VARARGS},
+        {"printc", py_printc, METH_VARARGS},
         {NULL, NULL}
 };
 
 static struct PyModuleDef cModule = {
         PyModuleDef_HEAD_INIT,
-        "CTest", /*module name*/
+        "Test", /*module name*/
         "", /* module documentation, may be NULL */
         -1, /* size of per-interpreter state of the module, or -1 if the module keeps state in global variables. */
         Methods
 };
-PyMODINIT_FUNC PyInit_CTest(void) {
+PyMODINIT_FUNC PyInit_Test(void) {
 
     return PyModule_Create(&cModule);
 }
