@@ -1,5 +1,10 @@
 # CPython example
 
+---
+
+If you like it - give me a star🌟! 😊
+
+---
 Cpython learning examples, let's speed up your Python speed 10000 times!
 
 - CMakeLists.txt ------ Compile the file, you should pay attention to your own Python dependency directory
